@@ -47,7 +47,7 @@ function handleError(error) {
 export default async function setWeatherInfo(location) {
     try {
         // Fetch weather info.
-        const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=032078bb3e3e4d509ed23057230209&q=${location}&days=3&aqi=no&alerts=no`, { mode: 'cors' });
+        const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=032078bb3e3e4d509ed23057230209&q=${location}&days=3&aqi=no&alerts=no`, { mode: 'cors' });
         const weather = await response.json();
         if (weather.error) {
             handleError(weather.error);

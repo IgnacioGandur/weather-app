@@ -17,7 +17,7 @@ function createCard(hour) {
 
 export default async function setHourlyForecast(location) {
     try {
-        const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=032078bb3e3e4d509ed23057230209&q=${location}&days=3&aqi=no&alerts=no`, { mode: 'cors' });
+        const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=032078bb3e3e4d509ed23057230209&q=${location}&days=3&aqi=no&alerts=no`, { mode: 'cors' });
         const weather = await response.json();
         const hourlyForecastArray = weather.forecast.forecastday[0].hour;
         document.querySelector('[data-hourly-forecast-container]').innerHTML = '';
